@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>exibir e esconder listas</title>
+
+    <style>
+.escondido{
+    display: none;
+}
+ button{
+ margin-bottom: 10px;
+ padding: 5px 10px;
+ cursor: pointer;
+ }
+    </style>
+       
+
+</head>
+<script>
+  function somar(){
+    let num1 = Number (document.getElementById ("num1").value);
+    let num2 = Number (document.getElementById("num2").value);
+    let soma = num1 + num2;
+    document.getElementById("resultado").innerText = "resultado: " + soma;
+  }
+  function subtrair(){
+    let num1 = Number (document.getElementById ("num1").value);
+    let num2 = Number (document.getElementById("num2").value);
+    let subtracao = num1 - num2;
+    document.getElementById("resultado").innerText = "resultado: " + subtracao;
+  }
+  function multiplicar(){
+    let num1 = Number (document.getElementById ("num1").value);
+    let num2 = Number (document.getElementById("num2").value);
+    let multiplicacao = num1 * num2;
+    document.getElementById("resultado").innerText = "resultado: " + multiplicacao;
+  }
+  function dividir(){
+    let num1 = Number (document.getElementById ("num1").value);
+    let num2 = Number (document.getElementById("num2").value);
+    let divisao = num1 / num2;
+    document.getElementById("resultado").innerText = "resultado: " + divisao;
+  }
+</script>
+<body>
+    <h1>calculadora</h1>
+  <input id="num1">
+  <input id="num2">
+ 
+  <br>
+   <h1>minhas listas</h1>
+ 
+   <button id="botao-listas">esconder tudo</button>
+
+  <button onclick="somar()">+</button>
+  <button onclick="subtrair()">-</button>
+  <button onclick="multiplicar()">*</button>
+  <button onclick="dividir()">/</button>
+   <h2>frutas</h2>
+   <ul id="lista-frutas">
+       <li>banana</li>
+       <li>maçã</li>
+       <li>laranja</li>
+    </ul>
+
+  <h2 id="resultado">resultado</h2>                
+    <script>
+        const botaoListas = document.getElementById('botao-listas');
+        const listaFrutas = document.getElementById('lista-frutas');
+
+ 
+        botaoListas.addEventListener('click', () => {
+            if (listaFrutas.style.display === 'none') {
+                listaFrutas.style.display = 'block';
+                botaoListas.textContent = 'esconder tudo';
+            } else {
+                listaFrutas.style.display = 'none';
+                botaoListas.textContent = 'mostrar tudo';
+            }
+        });
+    </script>
+</body>
+</html>
