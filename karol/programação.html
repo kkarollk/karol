@@ -1,0 +1,93 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM</title>
+
+    <style>
+        #oculto {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="titulo">Título</h1>
+
+    <p class="destaque">Texto</p>
+
+    <ul>
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+    </ul>
+
+    <p id="oculto">Texto escondido</p>
+    <button onclick="mostrar()">Mostrar</button>
+
+    <br><br>
+
+    <input id="entrada">
+    <button onclick="mostrarTexto()">Enviar</button>
+    <p id="resultado"></p>
+
+    <div class="caixa"></div>
+    <div class="caixa"></div>
+    <div class="caixa"></div>
+    <div class="caixa"></div>
+    <div class="caixa"></div>
+
+    <br>
+
+    <img id="foto" src="https://via.placeholder.com/100">
+    <button onclick="mudarFoto()">Mudar</button>
+
+    <br><br>
+
+    <button class="botao-estiloso">Botão</button>
+
+    <p id="mensagem">Mensagem</p>
+
+    <p class="comentario">Oi</p>
+    <p class="comentario">Olá</p>
+
+    <script>
+
+        document.getElementById("titulo").textContent = "Olá, Mundo!";
+
+        document.querySelector(".destaque").style.color = "blue";
+
+        document.querySelectorAll(".item").forEach(x => {
+            x.textContent = "Item modificado";
+        });
+
+        function mostrar() {
+            document.getElementById("oculto").style.display = "block";
+        }
+
+        function mostrarTexto() {
+            document.getElementById("resultado").textContent =
+                document.getElementById("entrada").value;
+        }
+
+        console.log(document.querySelectorAll(".caixa").length);
+
+        function mudarFoto() {
+            document.getElementById("foto").src =
+                "https://via.placeholder.com/100/ff0000";
+        }
+
+        document.querySelector(".botao-estiloso").style.backgroundColor = "pink";
+
+        document.getElementById("mensagem").textContent = "Nova mensagem";
+
+        document.querySelectorAll(".comentario").forEach(x => {
+            x.textContent = "Comentário: " + x.textContent;
+        });
+
+    </script>
+
+</body>
+</html>
+```
